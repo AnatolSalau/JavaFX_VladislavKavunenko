@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
 
 import java.awt.*;
 import java.util.Collection;
@@ -34,18 +36,21 @@ public class Main extends Application {
 //      задаем размер кнопки
         btn.setPrefSize(70,20);
 
+//        Создадим прямоугольник и закрасим его
+        Rectangle rect = new Rectangle(50,50);
+
 // создаем обработчик событий
         CmdDebug cmdDebug = new CmdDebug();
         btn.setOnAction(event ->{
             cmdDebug.cmdPrint("Hello");
+            rect.setFill(Color.RED);
                 });
 
-//создаем сцену и ук
-// азываем корневой узел - элемент где будут распологаться все поля, кнопки, итд
+//создаем сцену и указываем корневой узел - элемент где будут распологаться все поля, кнопки, итд
         Scene scene = new Scene(root);
 
-//добавим кнопку на окно
-        root.getChildren().addAll(btn);
+//добавим кнопку и прямоуголник на панель
+        root.getChildren().addAll(btn,rect);
 
 //задаем сцену  для нашего окна
         primaryStage.setScene(scene);

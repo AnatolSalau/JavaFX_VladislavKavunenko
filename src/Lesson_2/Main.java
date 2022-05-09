@@ -2,6 +2,7 @@ package Lesson_2;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,6 +21,7 @@ public class Main extends Application {
         HBox hbox = new HBox(10);
 
         hbox.setAlignment(Pos.CENTER);
+        vbox.setAlignment(Pos.CENTER);
 
 
         Button btn1 = addButton("1");
@@ -31,6 +33,11 @@ public class Main extends Application {
         Button btn7 = addButton("7");
         Button btn8 = addButton("8");
 
+
+        TextField textField = new TextField("Dimension one");
+
+
+
         vbox.getChildren().addAll(
                 btn1,btn2,btn3,btn4);
         hbox.getChildren().addAll(
@@ -39,6 +46,10 @@ public class Main extends Application {
         root.setBottom(hbox);
         root.setLeft(vbox);
 
+
+        Scene scene = new Scene(root,300,250);
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
     }
 
